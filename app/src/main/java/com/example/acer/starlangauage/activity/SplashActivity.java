@@ -1,6 +1,7 @@
 package com.example.acer.starlangauage.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -20,10 +21,11 @@ public class SplashActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        iv_bg = findViewById(R.id.iv_background);
+        iv_bg = (ImageView) findViewById(R.id.iv_background);
         initAnimal();
+
     }
 
     private void initAnimal() {
@@ -46,7 +48,27 @@ public class SplashActivity extends Activity {
         set.addAnimation(alphaAnimation);
         set.addAnimation(rotateAnimation);
 
+        set.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
         iv_bg.startAnimation(set);
+
 
     }
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/home_fragment"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        android:background="@drawable/title_red_bg"
+
+        >
+       <ImageButton
+           android:layout_width="50dp"
+           android:layout_height="wrap_content"
+           android:background="@drawable/key"
+           android:layout_margin="5dp"
+           android:id="@+id/btn_hide"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:textColor="#1dcdef"
+            android:paddingTop="10dp"
+            android:id="@+id/tv_home_title"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="5dp"
+            android:textSize="28sp"
+            android:text="@string/title"/>
+
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:background="@drawable/homebg">
+
+    </FrameLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/starsky"
+        android:id="@+id/radiogroup"
+        android:layout_height="80dp">
+
+        <RadioButton
+            android:id="@+id/rg_myue"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:background="@drawable/myue" />
+
+        <RadioButton
+            android:id="@+id/rg_kai"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:background="@drawable/kai" />
+
+        <RadioButton
+            android:id="@+id/rg_luban"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:background="@drawable/luban" />
+
+        <RadioButton
+            android:id="@+id/rg_zzhou"
+            android:layout_width="0dp"
+            android:clickable="false"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/zhuangz" />
+    </RadioGroup>
+</LinearLayout>
